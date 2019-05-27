@@ -55,7 +55,7 @@ describe("Meter reading service tests", () => {
       try {
         await service.add(-1, "2018-05-29T00:00:00.000Z");
       } catch (e) {
-        expect(e.message).equal('invalid cumulative reading')
+        expect(e.message).equal('invalid reading')
       }
     });
 

@@ -13,11 +13,11 @@ export class MeterReadingService {
     if (cumulative < 0) throw new Error('invalid reading');
 
     const dateTicks = Date.parse(readingDate);
-    if (!isNaN(dateTicks)) throw new Error('invalid reading date');
+    if (isNaN(dateTicks)) throw new Error('invalid reading date');
 
     const lastMonthMeterReading = await this.getLastMonthMeterReading();
     if (typeof lastMonthMeterReading !== 'undefined')
-      if (lastMonthMeterReading.cumulative < cumulative) throw new Error('invalid cumulative reading.');
+      if (lastMonthMeterReading.cumulative < cumulative) throw new Error('invalid reading.');
 
     const currentMonthMeterReading = new MeterReading(cumulative, 0, readingDate);
     currentMonthMeterReading.energyUsage = calculateEnergyUsage(lastMonthMeterReading, currentMonthMeterReading);
