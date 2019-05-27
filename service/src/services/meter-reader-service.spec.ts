@@ -1,4 +1,4 @@
-import { initialize, createTable } from "../infrastructure/seed-data";
+import {createTable, initialize, dumpData} from '../infrastructure/seed-data';
 import { getDatabasePool } from "../infrastructure/database";
 import { MeterReadingService } from "./meter-reading-service";
 import { expect } from "chai";
@@ -8,17 +8,17 @@ describe("Meter reading service tests", () => {
 
   describe("calling list", () => {
     it("should return a list of meter readings", (done) => {
-      initialize(async () => {
-        const dbPool = getDatabasePool();
+      const dbPool = getDatabasePool();
+      createTable(dbPool,async() => {
+        dumpData(dbPool);
         const service = new MeterReadingService(dbPool);
         const meterReadings = await service.list();
-
         const received = meterReadings.length;
         expect(received).equal(14);
-
         dbPool.close();
         done();
-      })
+      });
+     
     });
 
     it("should return an empty list when there are not meter readings", async () => {

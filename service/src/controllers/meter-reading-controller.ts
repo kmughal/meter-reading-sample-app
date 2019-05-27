@@ -31,8 +31,8 @@ export class MeterReadingController {
     ctx: ParameterizedContext<any, IRouterParamContext<any, {}>>,
     _: () => Promise<any>) {
 
-      const { cumulative, readerDate } = ctx.request.body;
-      await this.service.add(cumulative, readerDate);
+      const { cumulative, readingDate } = ctx.request.body;
+      await this.service.add(cumulative, readingDate);
       ctx.status = 201;
       ctx.message = "new meter reading added";
   }

@@ -28,7 +28,7 @@ export function createTable(dbPool: Database, cb: () => void = null) {
   });
 }
 
-function dumpData(dbPool: Database) {
+export function dumpData(dbPool: Database) {
 
   const { electricity } = sampleData;
   const meterReadings: Array<MeterReading> = electricity.map(i=> (new MeterReading(i.cumulative,0,i.ReaderDate,i.unit)));

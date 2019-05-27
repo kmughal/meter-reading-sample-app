@@ -1,4 +1,4 @@
-import { createServer } from './server/index';
+import { createServer } from './index';
 import * as Koa from 'koa';
 import { expect } from 'chai';
 
