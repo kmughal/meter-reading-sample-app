@@ -1,4 +1,4 @@
-# Meter Readers Sample Application
+# Meter Reading Sample Application
 
 ## Dependencies
 
