@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { App } from './MeterReading/App';
+import { App } from './meter-reading/App';
 
 
 document.addEventListener('DOMContentLoaded', () => {

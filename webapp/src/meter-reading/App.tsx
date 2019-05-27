@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { MeterReadingService } from './services/meter-reading-service';
-import { MeterReadingChart } from './BarChart/MeterReadingChart';
-import { MeterReadingTable } from './TableView/MeterReadingTable';
+import { MeterReadingChart } from './meter-reading-chart/MeterReadingChart';
+import { MeterReadingTable } from './meter-reading-table/MeterReadingTable';
 import { MeterReadingViewModel } from './model/MeterReadingViewModel';
 
 export const App = () => {

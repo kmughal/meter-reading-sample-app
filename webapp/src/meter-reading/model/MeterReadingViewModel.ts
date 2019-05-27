@@ -1,6 +1,6 @@
 
-import { MeterReadings } from "../tableview/model/MeterReadings";
-import { MeterReadingChartItems } from "../barchart/model/Index";
+import { MeterReadings } from "../meter-reading-table/model/MeterReadings";
+import { MeterReadingChartItems } from "../meter-reading-chart/model/Index";
 
 export class MeterReadingViewModel {
   constructor(public chartData: MeterReadingChartItems, public tableViewData: MeterReadings) {
